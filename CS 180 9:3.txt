@@ -1,0 +1,19 @@
+Reference types:
+- class
+- interface
+- type variables
+- array types
+
+Every expression has a type based on literals, variables, and methods
+Conversions can happen at compile time and run time
+Only some conversions are permitted
+
+WIDENING:
+size from smallest to largest:
+- byte
+- short
+- int
+- long
+- float
+- double
+

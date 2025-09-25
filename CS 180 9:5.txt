@@ -1,0 +1,38 @@
+Narrowing — reverse
+double to float, etc.
+- can lose information
+- often not permitted without a cast 
+
+CASTING: converts at runtime a value of one numeric type to a similar value of another numeric type — EXCEPT bool, also checks at runtime that a reference value refers to an object of compatible class, e.g.
+
+	double d = 3.21;
+	float f = (float) d;
+
+Upcasting — type promotion/widening (permitted and can happen automatically)
+
+AUTOBOXING: 
+- primitive types have corresponding "object wrapper" classes, e.g. int -> Integer, double -> Double, etc.
+Character myChar = 'a';
+- conversion other way is called unboxing
+
+REFERENCE TYPES
+- declarations create space for reference to an object, not the object itself
+- must use 'new' to construct the object
+
+STRINGS
+- built-in class, no need to import
+- literals are objects ("hello")
+- string variables hold references to objects
+- concatenation:
+	- string1.concat(string2)
+	- or string1 + string2
+
+
+
+
+
+
+
+
+
+

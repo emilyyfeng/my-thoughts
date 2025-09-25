@@ -1,0 +1,9 @@
+LECTURE 5: SELECTION AND FORMATTING
+- comparisons only compare the references to the objects, not the objects themselves!
+- java uses "short-circuiting" behavior, aka second operand is only evaluated IF needed
+
+Problem: SecretWord
+// upload
+
+
+

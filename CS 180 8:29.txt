@@ -1,0 +1,7 @@
+Variables: lowerCamelCase
+Classes: UpperCamelCase
+Symbolic constants: UPPER CASE
+
+e.g. "create a class Henway"
+public class Henway {
+}
