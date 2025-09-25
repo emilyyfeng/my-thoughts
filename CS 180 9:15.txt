@@ -1,0 +1,13 @@
+"meaningful" programming languages capable of:
+- sequencing
+- selection
+- iteration
+
+SELECTION:
+- alters a sequence (e.g. if, elif, else, switch)
+- branching (e.g. break, continue, return)
+
+ITERATION:
+- repeating smth multiple times
+- for, while, do/while
+

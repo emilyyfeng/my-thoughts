@@ -1,0 +1,4 @@
+ArrayList
+- dynamic array
+- specify upon creating
+
