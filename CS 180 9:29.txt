@@ -1,0 +1,145 @@
+object: instance of a class
+
+CLASS
+- template that defines state and behavior, e.g. variables & methods, mechanisms for instantiating the class
+- some classes can't be instantiated
+
+Class declarations:
+- modifiers (public, private, etc)
+- class name (capital first letter)
+- extends followed by name of parent or superclass (optional, can only have 1)
+- implements followed by list of interfaces (optional, can only have 1)
+
+e.g.
+class SomeClass extends ParentClass implements AnInterface {
+    // class body
+}
+
+Member variables
+- field: member variable in a class
+- local variable: var in a method or block of code
+- parameter
+
+Field declaration:
+- zero or more modifiers
+- type
+- name
+e.g. public int num
+
+Access modifiers:
+- determines if other classes can use a field or method
+- top class level)
+	- public or package-private (no modifier)
+- member level
+	- public (visible to all classes everywhere), private, protected, package-private
+
+MODIFIER	CLASS		PACKAGE		SUBCLASS	WORLD
+public		Y		Y		Y		Y
+protected	Y		Y		Y		N
+no modifier	Y		Y		N		N
+private		Y		N		N		N
+
+ENCAPSULATION
+- constructs that aid in the bundling of data with methods operating on that data
+- mechanism for restricting access to some of an object's components
+- improves readability and manageability of code
+- procedural languages e.g. C don't really have these constructs
+- fields should be marked private (avoid public fields, except for constants)
+- accessor and mutator methods are used to access fields instead, e.g. public get/set
+- access levels help avoid errors from misuse
+- rule of thumb: use the mot restrictive access level possible
+
+
+Class members
+- objects have their own copies of instance variables
+	- different memory locations
+- sometimes want a variable that is common across all objects
+	- called static fields or class variables
+	- associated with the class instead of an object
+	- one memory location
+- created by the static modifier
+- any object can change the value
+- can also be accessed without creating an instance
+- should ALWAYS be referenced using the class name: WheelStatic.numberOfWheels
+
+- static initialization block, only instantiated once regardless of how many times invoked
+
+Class methods
+- Java allows static methods as well as static variables
+- class methods should be invoked using the class name
+e.g.
+ClassName.methodName(args)
+
+Access
+- instance methods can access instance var and other instance methods
+- instance methods can access class var and class methods
+- class methods can access class car and class methods
+- class methods CANNOT DIRECTLY ACCESS instance car or instance methods
+	- must use an object reference
+	- also cannot use "this."
+
+Constants
+- using "final" keyword
+- Math.PI is a public static final double
+- all cpas for the name
+- often combined with static
+
+METHODS
+- parameterized block of code that may return a value
+ every method exists inside some class
+Why use them?
+- reusability: reduces redundancy in code
+- readability: identifies logical operation by name (abstraction)
+- modularity: can code and test independently
+
+Method declarations
+- modifies — public, private, etc.
+- return type (can be void) — NO return type in Java
+- method name
+- parameter list
+- exception list (for later)
+- method body
+
+- method signature: method name & parameter types
+
+e.g.
+modifiers return_type methodName(param_list) {
+    statements;
+    return if_needed;
+}
+
+Control flow
+- no standardized calling convention (unlike C)
+In general:
+- before call: argument values are copied to parameter var
+- calling method is "suspended"
+- called method begins execution at top of method body, runs until return or end
+- return value from called method is provided to callee
+- calling method resumed
+
+- Java passes arguments by value, even for objects (reference passed, not value)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
