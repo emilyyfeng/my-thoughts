@@ -1,0 +1,8 @@
+extent: how long a value is maintained/its "lifetime"
+- for local var: same as scope
+- parameters: created on method call, destroyed on return
+- objects: created by new, destroyed when garbage is collected (by reference counting)
+
+Method signature: method name & parameter types
+- method names don't need to be unique as long as parameter types are different
+
