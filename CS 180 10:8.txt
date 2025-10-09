@@ -1,0 +1,65 @@
+DATA PERSISTENCE
+- memory (RAM) is volatile (gone when power lost)
+- Storage (disks, tapes, DVD-ROMs, thumb drives, etc) is non-volatile (data maintained even without power)
+- program vs process: program (code that is not executing and is living in storage) vs process (data is loaded and executed) — we want the data that a program uses and generates to persist
+
+FILES AND JAVA
+- Java tries to be platform independent
+- provides an abstraction for interacting with files and the file system:
+
+class File
+
+- BUT file name is OS/FS dependent
+- directory conventions are OS/FS dependent, e.g. default paths
+
+BUFFERING
+- disk are slow so most file operations are buffered
+	- OS creates internal array
+	- reads more than needed
+	- caches write and flush intermittently or when done
+
+FILE I/O IN JAVA
+- Java has a range of ways to manipulate stored data
+- use import java.io.FileReader, import java.io.BufferedReader, or include both of them in import java.io.*;
+
+class File:
+- manipulates and queries the file system structure
+File someFile = new File("data.txt");
+- many methods
+
+LOW-LEVEL IO
+- a stream is a sequence of data items (usually 8 bit bytes)
+- 2 types of streams in Java: input, output
+- FileOutputStreamL output a sequence of bytes 
+	- can throw FileNotFoundException, IOException
+- FileInputStream: read in a stream of bytes
+
+SERIALIZATION
+- process of converting an object into a stream of bytes
+- also called marshalling
+- reverse is deserialization/unmarshalling
+- not as simple bc some objects may contain references to other objects that you're serializing
+
+OBJECT I/O
+- ObjectOutputStream, ObjectInputStream
+
+CONTENT TYPE of Files
+- 2 categories: plain text, binary
+Plain text (e.g. *.java, *.txt)
+- human-readable, character data
+- mostly platform independent
+Binary test (e.g. *.class, *.exe)
+- not generally human readable
+- stores any kind of data
+- requires specific program to make sense of it
+
+
+
+
+
+
+
+
+
+
+
