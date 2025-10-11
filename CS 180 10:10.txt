@@ -1,0 +1,69 @@
+EXCEPTIONS
+Definition: an event that occurs during execution that disrupts the normal flow of the program's instructions
+
+- explicit checking with if-then-else
+	- return values used to signal an error
+	- used in C, often -1
+	- what if your function returns negative numbers - how to distinguish?
+- java has built-in exception handling mechanism
+	- exceptional cases can leverage a special type of control flow
+
+Sequence:
+- Java stops execution of the current method
+- java creates an exception object
+	- contains info about the error: type, program state, etc
+- hands exception object in the runtime system called throwing
+- runtime system searches call stack for na exception handler to deal with the problem
+ once found, displayed
+
+STACKS
+Last in first out LIFO data structure
+- push() : push something on stack
+- pop() : retrieve most recently push()-ed item
+
+Catching: first exception handler than can handle the exception object type is used, if none found, program terminates
+
+- exceptions are objects
+- an exception object is an instance of:
+	- class Exception
+	- or a subclass of Exception
+- created using new
+- 2 useful methods:
+	- printMessage()
+	- getStackTrace()
+
+CATCH OR SPECIFY:
+- code that might throw an exception must either
+	- be enclosed in a try statement that catches the exception
+	- exist within a method that specifies it can through the exception (method must provide a throw clause for the exception)
+
+KINDS OF EXCEPTIONS:
+Checked:
+- subject to catch or specify requirement
+- every exception except Error and RuntimeException
+
+Unechecked:
+- not subject to catch or specify
+- error (conditions external to the application that cannot be recovered from e.g hardware)
+
+- a method can declare that it throws an exception... "throws" is a keyword
+
+finally block
+- want to make sure something is done even when an exception is thrown
+- gets executed even if there's a return
+- System.exit() will stop the finally from executing
+
+"If a client can reasonably be expected to recover from an exception, make it a checked exception." If not – unchecked
+
+
+
+
+
+
+
+
+
+
+
+
+
