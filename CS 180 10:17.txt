@@ -1,0 +1,62 @@
+INHERITANCE
+- classes can be derived form other classes
+- fields and methods are inherited from those classes
+- can reuse fields and methods of an existing class
+
+- a SUBCLASS is derived from another class (also called derived/extended/child class)
+- derived from SUPERCLASS (also called base/parent class)
+
+HIERARCHY:
+- classes can be derived from subclasses of other classes
+- such a class is descended from all classes in the inheritance chain
+
+SINGLE INHERITANCE (Java is single inheritance language)
+- every class has exactly one superclass of parent
+- except objects
+- no explicit superclass => parent is object
+- classes extend only one class but can implement multiple interfaces
+
+- contents of superclasses/parents are SUBSETS of their derived or child classes
+- children always have more
+
+OBJECT
+- small number of public methods (e.g. clone(), equals(Object e), hashCode(), toString())
+
+CONSTRUCTORS
+- subclasses do NOT inherit parent constructors
+- how to build the parent? Constructor chaining
+	- parent constructor invoked first
+	- implicit call to the superclass constructor inserted by java (super())
+
+- Java provides constructor by default if no other constructor is defined
+- even if you provide a constructor, Java will prepend to it if you do not:
+	- call another constructor in the current class — this()
+	- or call a superclass constructor — super()
+	- can only do one, not both
+	- the constructor called with this(...) either calls another this(...) or super(...)
+	- so eventually super() will be called
+
+- subclass inherits all public and protected members of its parent
+- if its in the same package, also inherits package-private members
+- does not inherit private members
+
+class [subClass] extends [parentClass] {
+...
+}
+
+OVERRIDING
+- not to be confused with overloading (multiple methods with same name, diff signature)
+- method defined in parent, redefining same method with diff signature in child
+- subclass methods with same signature as methods in parent class override them
+
+ANNOTATIONS
+- @Something
+- predefined types: @Override, @Deprecated, etc.
+- can create your own too
+
+OVERRIDING VS HIDING
+- overridden methods always invoke the subclass method
+- instance methods cannot override static methods and vice versa
+
+- if a class is declared final, no other classes can derive from it
+- if a method is declared final, no derived class can override it
