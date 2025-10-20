@@ -1,0 +1,65 @@
+CONCURRENT PROGRAMMING
+
+Process: program in execution
+- usually has its own address space, registers, stack, etc
+- can have multiple instances of the same program
+- self-contained execution environment
+- JVM is usually single processor
+
+Fetch-execute
+Where to fetch?
+- Program counter (PC) holds address of next instruction to execute
+- normally increments by sizeof(instr)
+
+THREADS (also called lightweight processes)
+= exist within a process (at least one thread)
+- threads have their own stack & registers
+- but they share address space
+- require fewer resources than a new process
+- Java applications have at least one threat — the main thread
+
+CREATING THREADS
+- Extend class Thread
+	- fine for simple applications but your class must be a descendant of Thread
+	- no inheriting from a different class
+- implement the Runnable interface
+	- more general, can subclass other classes
+
+* execute thread is thread.start() NOT thread.run() — run() will just directly invoke
+* thread.join() — wait for a thread to complete before proceeding
+
+- thread.sleep() — sleep can suspend execution for a specified period of time in milliseconds
+
+INTERRUPTS
+threat.interrupt()
+
+TWO MODELS
+- shared memory architecture
+- message passing
+
+Granularity:
+- size of decomposed parts
+- fine-grained parallelism
+- coarse-grained parallelism
+
+TASK DECOMPOSITION
+- split task into multiple subtasks
+-each subtask runs different code
+- each subtask runs on its own core (processor)
+- primary benefit: responsiveness
+	- GUI is one task
+	- background computation a different task
+	- GUI is always responsive
+
+DOMAIN DECOMPOSITION
+- domain: input examined by the problem
+- divide domain into pieces (subdomains)
+- each subtask runs
+	- same code
+	- on different input
+- each subdomain has its own task running on different core
+- primary benefit: speed
+
+
+
+
