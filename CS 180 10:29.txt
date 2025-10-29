@@ -1,0 +1,19 @@
+GUI: GRAPHICAL USER INTERFACE
+- user interacts using keyboard and pointing device
+- program responds to user events with actions
+- easier to hide functionality (sometimes detrimentally so)
+
+Windowing system
+- software that manages the screen
+	- usually supports WIMP (windows, icons, menus, and pointer)
+- implements graphical primitives
+- abstracts graphics hardware
+- handles input devices
+- some support remote access
+
+- java.awt and javax.swing have classes that help construct GUIS
+- Java GUI components adopt "lock and feel" of local systems (sometimes not well)
+
+showInputDialog
+- obtain user input
+- returns a string
