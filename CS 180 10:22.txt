@@ -1,0 +1,25 @@
+SYNCHRONIZATION
+- instructions are guaranteed to execute in order within a single threat
+- no ordering guaranteed among multiple threads
+
+private volatile boolean lock = false
+- volatile keyword guarantees visibility of changes to variables across multiple threads
+- reads directly from main memory
+
+Synchronized methods
+- withih a class, only one synchronized method will be permitted to execute at a time (mutually exclusive)
+
+Synchronized statements
+- finer-grained control
+- relies on an Object (can be this)
+synchronized(Obj) { ... }
+- statements inside synchronized block are mutually exclusive
+
+Deadlock
+- two or more threads are blocked forever
+
+Starvation
+- one or more threads is unable to gain access to a shared resource and therefore unable to make progress
+
+Livelock
+- two or more threats are caught solely responding to each other. No progress made, but they continue executing

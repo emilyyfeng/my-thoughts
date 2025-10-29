@@ -1,0 +1,67 @@
+Given a network and a set of systems, how do we actually send data between a subset of systems?
+- Establish a route: find the system(s)
+- Protocol: how we're going to communicate
+- Socket: establishing a connection
+
+IP is an addressing and fragmentation protocol
+- breaks communication into chunks (packets)
+- routes packets from a source to a destination
+- inherently unreliable
+- diferent versions IPv4 vs. IPv6
+
+IP ADDRESS
+- each host/system has at least one IP address
+- nnn.nnn.nnn.nnn 4 bytes, 32 bits: e.g. 128.10.116.31
+- packets are sent from/to IP addresses (may traverse multiple routers)
+- public/private (unrouteable, can use them in a local network but can't send data across internet)
+- NATs (network address translation)
+
+DOMAIN NAME SYSTEM
+- DNS is a distributed system that resolves host names to IP addresses
+- arranged in a hierarchy (e.g. .com, .org, .edu are top priority)
+- name resolution (getting the IP address) can involve multiple queries among different domains
+- caching servers for a certain amount of time so it doesn't have to go through process again
+- possible to do reverse IP address lookup
+
+java.net.*
+
+TRANSMISSION CONTROL PROTOCOL
+- IP is unreliable — TCP builds on IP to create a relatable network connection (often referred to as TCP/IP)
+- supports acknowledgements and retransmission
+- Hosts identified by IP address and a port number
+
+CLIENTS AND SERVERS
+- server: a process that waits for a connection
+- client: a process that connects to a server
+- processes can be both
+- machines can have multiple servers and clients running at once
+- once connected, clients and servers read and write data rom/to each other much like a file
+
+NETWORK SOCKETS
+- clients and servers communicate via sockets
+- socket is an endpoint for sending and receiving data
+- a socket address consists of the IP address and port number (at least for TCP)
+- port number is 16 bits (0–65535)
+	- ports < 1024 are privileged, but can bind to ports > 1024
+
+- anything built on a File{Output|Input}Stream can be built on top of a socket
+
+class Socket — client
+- Client identifies server with an IP address or host name and port number
+Socket s = new Socket("endor.cs.purdue.edu", 2048);
+- provides 2 methods for communication: getOutputStream() and getInputStream()
+- need to close socket s.close() like a file reader/writer
+
+ServerSocket
+- used by a server to listen for and establish a connection to client(s)
+ServerSocket ss = new ServerSocket(2048);
+- once established, need to create a regular Socket (this waits/blocks until a connection is established)
+Socket s = ss.accept();
+
+
+
+
+
+
+
+
