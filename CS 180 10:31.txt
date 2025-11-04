@@ -1,0 +1,57 @@
+1)
+
+int maxLen - words[0].length();
+
+for (int i = 1; i < words.length; i++_ {
+	if (words[i].length() > maxLen) {
+		maxLen = words[i].length();
+	}
+}
+
+char[][]letters = new char[words.length][maxLen];
+
+for (int i = 0; i < words.length; i++) {
+	for (int j = 0; j < maxLen; j++) {
+		if (j < words[i].length()) {
+			letters[i][j] = words[i].charAt(j);
+		} else {
+			letters[i][j] = '\0';
+		}
+	}
+}
+
+2) True — you can have jagged arrays
+
+3)
+
+int size = 0;
+for (int i = 0; i < probabilities.length; i++) {
+	size += probabilities[i].length;
+}
+double[] 
+
+4) False
+
+5) 
+
+9) False
+10) False
+
+12) Reader
+13) Runtime
+14) FileNotFoundException and EOFException
+15) this
+16) import java.io.*
+17) super
+
+18) 
+
+19) 
+
+21) Methods in interfaces can be declared as... ABSTRACT, DEFAULT, or STATIC
+22) true
+23) false
+24) true
+25) false
+26) true
+27) true
