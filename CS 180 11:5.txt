@@ -1,0 +1,76 @@
+Model-View-Controller
+- design pattern that can be applied to GUIs
+- many variations but general 3 areas of responsibility:
+	- Model: data underlying the application (e.g. a database)
+	- View: the GUI components visible to user
+	- Controller: "glue" that implements the "business rules" of the application
+
+Containment hierarchy
+- Tree of components that have a top=level containiner as its "root"
+- each component can be contained only once (adding to one after another removes it from the first)
+- top-level containers have a content pane holding visible components
+
+Top-level containers
+- 3 main top-level container classes: JFrame, JDialog (JOptionPane is built on this), JApplet
+
+JFrame:
+- basic top-level window
+- can create a raw JFrame, or extend it using inheritance
+Contains:
+- optional menu bar (menu items)
+- content pane (labels, buttons, etc.)
+
+Threading
+- to avoid possibility of deadlock, make sure Swing components and models are created, modified, and queried ONLY from the event dispatching thread
+- Why doesn't the initial thread simple create the GUI itself? => Because almost all code that creates or interacts with Swing components must run of the event dispatch threat.
+
+JFrame operations:
+- setDefaultCloseOperation(): window close
+	- use DISPOSE_ON_CLOSE not EXIT_ON_CLOSE (equiv to System.exit())
+- setSize(): width and height
+- setResizable(): true or false
+- setVisible(): true or false (true "validates")
+- setTitle(): String to appear in title bar
+- add(): add components to the component pane
+
+CONTENT PANE
+- Java panel class (JPanel)
+	- frame.getContentPane();
+As a convenience, add(), remove(), setLayout() are overridden to forward to the contentPane as necessary => so one can frame.add() instead of frame.getContentPane().add()
+
+Labels
+- JLabel class displays un-selectable text and images
+- supports HTML
+- also has various methods: setFont(), setForeground(), etc.
+
+REMINDER: any time you create, manipulate, or query a GUI component, it MUST be done in the EDT (event dispatch thread) — can cause non-determinism, leads to difficult debugging
+
+Layout managers
+- define how widgets and panels are placed relative to one another (default is BorderLayout)
+- often combined with JPanels to group widgets
+	- hierarchical, just like all components
+	- may contain sub-panels
+Includes:
+- BorderLayout: 
+	- divides pane into 5 regions (CENTER, NORTH, SOUTH, EAST, WEST)
+	- or more recently: CENTER, PAGE_START, PAGE_END, LINE_START, LINE_END
+	- can add one component to each region
+- BoxLayout
+- CardLayout
+- FlowLayout
+- GridBagLayout
+- GridLayout
+- GroupLayout
+- SpringLayout
+
+Inner classes
+- Local inner class (declared inside an instance method), no access level, can capture final local variables/effectively final (even if not designated final, otherwise cannot reference)
+- anonymous classes (like a local inner class, but returns a one-time object), syntactically convenient way to declare and instantiate all at once
+
+
+
+
+
+
+
+
