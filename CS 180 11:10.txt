@@ -1,0 +1,60 @@
+Polymorphism: the provision of a single interface to entities of different types
+- subclasses of a class can define their own unique behaviors yet share some of the same functionality of the parent class
+- variables of superclass type can hold a reference to a subclass object
+- works with interfaces too
+- polymorphism is to: avoid redundancy (code reuse) and better organization (abstraction)
+- in Java: compiler always looks for a (overridden) child or subclass definition first — based on the actual type of the object, not the type of the reference
+
+ABSTRACT CLASSES
+- may or may not include abstract methods
+	- methods declared without an implementation cannot be private or static
+- cannot be instantiated
+- can be subclassed
+- subclasses can also be abstract; if not, must implement all abstract methods in the superclass(es)
+
+Abstract classes vs. interfaces:
+SIMILARITIES:
+- cannot instantiate
+- can contain a mix of methods with and without implementations
+DIFFERENCES:
+- abstract classes can declare fields that are not static and final
+- abstract classes can define public, protected, and private methods
+- abstract classes can only extend one class, regardless of if abstract
+
+CHOOSE ABSTRACT CLASSES WHEN...
+- you want to share code among several closely related classes
+- classes that extend your abstract class have many common methods or fields
+	- OR require access modifiers other than public (e.g. protected and private)
+- need non-static or non-final fields
+
+CHOOSE INTERFACES WHEN...
+- you expect that unrelated classes would implement your interface, e.g. Runnable, Iterator, ActionListener, etc.
+- want to specify behavior of a particular data type, but do not care who implements the behavior
+- want to take advantage of "multiple inheritance"
+
+BOTH
+- Abstract classes can implement interfaces
+- abstract classes can extend abstract classes
+- at some point a subclass should exist that has everything implemented and defined!
+
+DYNAMIC/LATE BINDING
+- not to be confused with overloaded methods
+Def:
+- often not known at compile time which version of a polymorphic method should be executed
+- instead, executed method is determined at runtime based on object type, NOT variable type
+Why?
+- allows generic treatment of objects
+- e.g. allows to create an array of Animals, where some are dogs, some are cats, some are new animals defined after the code is written
+
+Suppose we have a hierarchy:
+Object <= Animal <= Mammal <= Bear
+- objects of class Bear are also of type Mammal, Animal, and Object
+- can use class bear wherever we can use class Mammal, class Animal, or class Object, BUT REVERSE IS NOT TRUE; can always cast though
+
+instanceof
+- can determine if an object is of a particular class or subclass
+"objectA instanceof ClassB"
+- evaluates to true if the object referenced by objectA is an instance of the class ClassB
+(student1 instanceof Student) => true
+(student1 instanceof Person) => true
+(Animal() instanceof Dog) => false
