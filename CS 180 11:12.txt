@@ -1,0 +1,21 @@
+Data structure: A way to organize, store, and retrieve information in a program
+Dynamic data structure: A data structure whose memory use can grow and shrink as necessary to store the information being maintained
+
+LinkedList: outer class that implements accessor and mutator methods, similar to ArrayList
+- maintains "head pointer" (reference to node)
+
+Node()
+- implements individual node
+- each node is linked to another (except the last)
+- stores relevant data
+
+Forming a linked list:
+Growing "backwards" (adding to the beginning)
+- use one variable to refer the "head" of the list
+- use a temp var to refer to a new Node
+- set temp.next = head
+- set head = temp
+Growing "forward" (adding to the end)
+- use one variable to refer to the "head of" the list
+- use a second variable to refer to the tail of the list (so don't need to iterate through whole list to add new node)
+- add every new structure to tail.next
