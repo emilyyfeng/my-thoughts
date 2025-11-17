@@ -1,0 +1,60 @@
+Abstract Data Type (ADT)
+- data type is defined by its behavior or semantics (as viewed by a user of the data, includes operations and possible values)
+- user is unaware of implementation details (cannot make assumptions about implementation)
+- implementers of ADTs have great flexibility
+
+2 common ADTs:
+1) Stack (LIFO)
+- push: add an element to the collection
+- pull: remove the most recently added element
+Stack uses:
+- good for managing storage of local variables, RPN (Reverse Polish/Postfix Notation), tracking changes for undo
+
+2) Queue (FIFO)
+- enqueue: add element to the rear terminal position
+- dequeue: remove element from the front terminal position
+Queue uses:
+- Files sent to printer, threads (or processes) waiting for access to CPU (part of OS scheduling)
+- network packets waiting for transmission
+- producer/consumer relationships (produces generate requests/data and enqueues them, consumers dequeue and process)
+
+Stack interface:
+public interface Stack {
+	void push(int value;
+	int pop();
+}
+
+Queue interface:
+public interface Queue {
+	void add(int value); // add to end
+	int remove(); // remove from front
+	int peek();
+	boolean isEmpty();
+}
+
+Generics: allow types (classes and interfaces) to be parameters when defining classes, interfaces, and methods
+- to prevent code re-use, eliminate casts, better type checks at compile time
+E.g.:
+Stack<Integer> s = new Stack<Integer>();
+ArrayList<String> list = new ArrayList<String>();
+
+
+
+HASHMAPS
+- implements the Map interface, Maps map keys to values
+- Hash table-based implementation (NOT thread-safe)
+- sometimes called associative array/dictionary
+
+HashMap<K, V>
+K: type of the "key"
+V: type of the "value"
+HashMap<String, Tree> map = new
+HashMap<String, Tree>();
+map.put(“elm”, new Tree(“elm”, 34.5));
+map.put(“maple”, new Tree(“maple”, 14.2));
+Tree t = map.get(“elm”);
+
+Performance:
+Capacity: number of buckets in the hash table
+Load factor: how full the table can get before capacity is increased
+- initial capacity and load factor are the two parameters that impact performance (default load factor is 0.75, default initial capacity is 16)
