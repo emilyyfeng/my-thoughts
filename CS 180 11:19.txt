@@ -1,0 +1,12 @@
+RECURSION — a self reference with 2 properties:
+1) a base case/cases — terminating condition that does not use recursion to produce an answer
+2) a set of rules that reduce all other cases toward the case base
+
+In programming:
+- methods can call itself (e.g. Fibonacci)
+- data structures can reference itself e.g:
+private class Node {
+	String value;
+	Node next;
+}
+
