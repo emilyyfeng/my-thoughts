@@ -1,0 +1,26 @@
+TREES: hierarchical with one-to-many links, e.g. parent to children
+- can be used to model hierarchically structured data
+- great for efficient searching and sorting
+
+Root node: a node with no parents
+Leaf node: a node with no children
+Interior node: neither of the above
+
+A tree is either empty (root is null) OR a node with links to 0 or more trees
+
+BINARY SEARCH TREE
+- each node references at most 2 children/subtrees
+- value (or key) in left child must be <= parent
+- value (or key) in right child must be > parents
+- you can always add a new child in the proper order (to the left or right of the parent)
+- the tree is always fully sorted
+- the tree is easily searchable
+
+TREE TRAVERSAL: Least element is far left, greatest element is far right — how can we start at the far left and go through each node in order?
+- Least to greatest: for each node, access L node recursively, then the node N itself, then the R node recursively (L-N-R)
+- Greatest to least: R-N-L
+- Prefix/preorder: N-L-R
+- Postfix/postorder: L-R-N
+
+Complexity: "divide & conquer" method finds value in at most log(base 2)(n) comparisons (for a balanced tree)
+- compare to linked list: linear search takes at most n comparisons
