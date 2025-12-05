@@ -1,0 +1,6 @@
+BACKTRACKING: another use of recursion — problem solving by trial and error
+Problem must be decomposable into series of steps
+- try step
+- if successful — progress step (recursive)
+- if failure — backtrack (undo step)
+Each recursive instance "remembers" what step was taken and how to undo it if things don't work out
